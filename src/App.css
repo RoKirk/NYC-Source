@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+#landing-page {
+  background-image: url("./Assets/NYC\ Source\ -\ Landing\ Page\ Image.jpeg");
+  margin: 0 auto;
+  height: 1200px;
+}
+
+#app-title {
+  font-family: 'Cute Font', cursive;
+  /* color: rgb(59, 91, 110); */
+  font-size: 250px;
+  margin: 0 auto;
+  -webkit-text-stroke: 1px  rgb(59, 91, 110);
+   color: rgb(59, 91, 110);
+   text-shadow:
+       3px 3px 0 white,
+     -1px -1px 0 white,  
+      1px -1px 0 white,
+      -1px 1px 0 white,
+       1px 1px 0 white;
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  animation-iteration-count: 1;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
