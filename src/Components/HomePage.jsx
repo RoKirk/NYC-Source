@@ -22,8 +22,11 @@ class HomePage extends Component {
 
     render() {
         return (
-
-            <div>
+            
+            /*Javascript Land*/
+            <div> 
+            {/* JSX Land */}
+                {console.log()}
 
                 <h1>HomePage</h1>
 
@@ -31,12 +34,14 @@ class HomePage extends Component {
 
                 <SideNav style={{ background: "rgb(59, 91, 110)", opacity:0.8}}
                     onSelect={(selected) => {
-                        // Add your code here
+                        console.log(selected, "Here")
+                        this.props.history.push(selected);
+                        // Added code here for "onSelect" event.
                     }}
                 >
                     <SideNav.Toggle />
-                    <SideNav.Nav defaultSelected="home">
-                        <NavItem eventKey="home">
+                    <SideNav.Nav defaultSelected="/population">
+                        <NavItem eventKey="/population">
                             <NavIcon>
                                 <Icon size={36} icon={group}/>
                             </NavIcon>

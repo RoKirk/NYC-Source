@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Homepage from './HomePage';
 
+
 const LandingPage = (props) => {
+
+    useEffect(() => {
+        setTimeout(() => {
+             props.history.push("/homepage")
+         }, 2000)
+    }, [])
+    
     return (
 
         <div id="landing-page">
