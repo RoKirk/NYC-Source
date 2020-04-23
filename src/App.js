@@ -3,10 +3,13 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import './App.css';
 import LandingPage from './Components/LandingPage';
 import HomePage from './Components/HomePage';
+import PopulationView from './Components/Views/PopulationView';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    
+
     <div className="App">
 
       <Switch>
@@ -19,7 +22,11 @@ function App() {
         
         <Route 
           exact path="/homepage"
-          component={HomePage}/>
+          component={HomePage} />
+        
+        <Route 
+          exact path="/population"
+          component={PopulationView} />
 
       </Switch>
 

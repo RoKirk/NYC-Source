@@ -39,8 +39,23 @@
 
 #landing-page {
   background-image: url("./Assets/NYC\ Source\ -\ Landing\ Page\ Image.jpeg");
-  margin: 0 auto;
-  height: 1200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: .5;
+}
+
+.homepage {
+  background-image: url("./Assets/NYC\ Source\ -\ Landing\ Page\ Image.jpeg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 #app-title {
@@ -58,7 +73,40 @@
        1px 1px 0 white;
 }
 
-@keyframes slideInUp {
+.PopulationView {
+  background-image: url("./Assets/NYC\ Source\ -\ Landing\ Page\ Image.jpeg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#root > div > div > div > table {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: 'Cute Font', cursive;
+  /* color: rgb(59, 91, 110); */
+  font-size: 150px;
+  margin: 0 auto;
+  -webkit-text-stroke: 1px  rgb(59, 91, 110);
+   color: rgb(59, 91, 110);
+   text-shadow:
+       3px 3px 0 white,
+     -1px -1px 0 white,  
+      1px -1px 0 white,
+      -1px 1px 0 white,
+       1px 1px 0 white;
+}
+
+
+
+/* @keyframes slideInUp {
   from {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
@@ -77,4 +125,4 @@
   animation-iteration-count: 1;
   animation-duration: 4s;
   animation-delay: 1s;
-}
+} */
