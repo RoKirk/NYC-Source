@@ -46,6 +46,8 @@
   min-width: 100%;
   min-height: 100%;
   opacity: .5;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .homepage {
@@ -56,6 +58,8 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #app-title {
@@ -81,6 +85,9 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #root > div > div > div > table {
