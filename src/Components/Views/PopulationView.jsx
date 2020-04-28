@@ -41,8 +41,8 @@ class PopulationView extends Component {
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>George</td>
+                            <td>Clayton</td>
                             {/* <td colSpan="2">Larry the Bird</td> */}
                         </tr>
                     </tbody>

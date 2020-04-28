@@ -45,7 +45,7 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
-  opacity: .5;
+  /* opacity: .5; */
   background-repeat: no-repeat;
   background-size: cover;
 }
