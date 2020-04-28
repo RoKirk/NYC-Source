@@ -7,7 +7,7 @@ const LandingPage = (props) => {
     useEffect(() => {
         setTimeout(() => {
              props.history.push("/homepage")
-         }, 5000)
+         }, 4500)
     }, [])
     
     return (

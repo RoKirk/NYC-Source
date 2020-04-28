@@ -5,9 +5,9 @@ class AnimationText extends React.Component {
     render() {
         return (
             <Typical
-                className="heading"
+                className="app-title"
                 steps={['NYC', 2000, 'NYC Source', 500]}
-                loop={Infinity}
+                // loop={Infinity}
                 wrapper="p"
             />
         )

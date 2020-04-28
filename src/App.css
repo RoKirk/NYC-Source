@@ -62,7 +62,7 @@
   background-size: cover;
 }
 
-#app-title {
+.app-title {
   font-family: 'Cute Font', cursive;
   /* color: rgb(59, 91, 110); */
   font-size: 250px;
