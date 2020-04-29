@@ -27,6 +27,8 @@ class PopulationView extends Component {
         let { data } = response.data;
         this.setState({ zip: data })
         console.log(response, "This is the Axios call")
+        console.log(response.data[0].jurisdiction_name, "This is the Axios call also")
+
 
         this.setState({ buttonState: 'loading' })
         // make asynchronous call
@@ -51,39 +53,38 @@ class PopulationView extends Component {
                     <NavBar />
                 </aside>
 
-                <Table className="table" responsive="sm" striped bordered hover variant="dark">
-                    <thead>
+                <Table className="table" responsive="sm" striped bordered hover>
+                    <thead className="table-bordered">
                         <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
+                            <th>Zip: ?????</th>
+                            {console.log()}
+                            <th>Percentage</th>
+                            {/* <th>Last Name</th> */}
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody className="table-bordered">
+                        {/* <tr>
                             <td>1</td>
                             <td>Mark</td>
                             <td>Otto</td>
+                        </tr> */}
+                        <tr>
+                            <td>Male</td>
+                            <td>50% {this.response}</td>
+                            {/* <td>Thornton</td> */}
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>George</td>
-                            <td>Clayton</td>
+                            <td>Female</td>
+                            <td>50%</td>
+                            {/* <td>Clayton</td> */}
                             {/* <td colSpan="2">Larry the Bird</td> */}
                         </tr>
                     </tbody>
                 </Table>
 
                 <div>
-                    <Button className="btn-secondary">Submit</Button>{' '}
+                    <Button onClick={this.handleClick} className="btn-secondary">Submit</Button>{' '}
                 </div>
-
-
 
                 <Link to="/">Back to Landing</Link>
 
