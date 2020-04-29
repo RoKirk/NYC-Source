@@ -1,14 +1,45 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from "axios";
 import NavBar from '../Shared/NavBar';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+
 
 
 class PopulationView extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {
+            zip: [],
+        };
     }
+
+    // getData = async () => {
+    //     let response = await axios.get("https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=");
+    //     let { data } = response.data;
+    //     this.setState({ zip: data })
+    //     console.log(response, "This is the Axios call")
+    // };
+
+    handleClick = async () => {
+        let response = await axios.get("https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=11203");
+        let { data } = response.data;
+        this.setState({ zip: data })
+        console.log(response, "This is the Axios call")
+
+        this.setState({ buttonState: 'loading' })
+        // make asynchronous call
+        setTimeout(() => {
+            this.setState({ buttonState: 'success' })
+        }, 3000)
+    }
+
+    // componentDidMount() {
+    //     this.getData()
+    //     console.log(this.state.zip, "Over Here")
+    // }
+
     render() {
         return (
 
@@ -47,6 +78,12 @@ class PopulationView extends Component {
                         </tr>
                     </tbody>
                 </Table>
+
+                <div>
+                    <Button className="btn-secondary">Submit</Button>{' '}
+                </div>
+
+
 
                 <Link to="/">Back to Landing</Link>
 

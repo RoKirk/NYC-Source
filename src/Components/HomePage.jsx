@@ -9,19 +9,17 @@ class HomePage extends Component {
         this.state = {};
     }
 
-
     render() {
         return (
-            
-            /*Javascript Land*/
-            <div className="homepage"> 
-            {/* JSX Land */}
 
-                <NavBar {...this.props}/>
+            /*Javascript Land*/
+            <div className="homepage">
+                {/* JSX Land */}
+
+                <NavBar {...this.props} />
                 {console.log("Hi Rhol!")}
 
                 <h1 className="heading">NYC Source</h1>
-
 
                 <Link to="/">Back to Landing</Link>
 
