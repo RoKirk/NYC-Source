@@ -120,14 +120,13 @@
   background-color: white;
 }
 
-.table-bordered {
-  color: rgb(59, 91, 110);
-}
-
 .input {
   color: rgb(59, 91, 110);
   text-align: center;
   font-weight: bolder;
+  border: rgb(59, 91, 110);
+  border-width: 4px;
+  border-style: solid;
   margin: 25px;
 }
 
@@ -136,6 +135,47 @@ button.btn-secondary.btn.btn-primary {
 
 }
 
+#root > div > div > div.table-responsive-sm > table > tbody > tr:nth-child(3) > td:nth-child(2) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid;
+}
+
+#root > div > div > div.table-responsive-sm > table > thead > tr > th:nth-child(1) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid;
+}
+
+#root > div > div > div.table-responsive-sm > table > thead > tr > th:nth-child(2) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid;
+}
+
+#root > div > div > div.table-responsive-sm > table > tbody > tr:nth-child(1) > td:nth-child(1) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid; 
+}
+
+#root > div > div > div.table-responsive-sm > table > tbody > tr:nth-child(1) > td:nth-child(2) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid;   
+}
+
+#root > div > div > div.table-responsive-sm > table > tbody > tr:nth-child(2) > td:nth-child(1) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid; 
+}
+
+#root > div > div > div.table-responsive-sm > table > tbody > tr:nth-child(3) > td:nth-child(1) {
+  border: rgb(59, 91, 110);
+  border-width: 2px;
+  border-style: solid;
+}
 
 
 /* @keyframes slideInUp {
