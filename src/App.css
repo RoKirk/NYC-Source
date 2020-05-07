@@ -131,6 +131,11 @@
   margin: 25px;
 }
 
+button.btn-secondary.btn.btn-primary {
+  background-color: rgb(59, 91, 110);
+
+}
+
 
 
 /* @keyframes slideInUp {
