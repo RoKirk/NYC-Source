@@ -4,45 +4,42 @@ import axios from "axios";
 import NavBar from '../Shared/NavBar';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-
+import Form from 'react-bootstrap/Form';
+import Col  from 'react-bootstrap/Col'
 
 
 class PopulationView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            zip: [],
+            // zip: [], (Initial State value for map render)
+            zip: null,
+            zip_code: "",
         };
     }
 
-    // getData = async () => {
-    //     let response = await axios.get("https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=");
-    //     let { data } = response.data;
-    //     this.setState({ zip: data })
-    //     console.log(response, "This is the Axios call")
-    // };
+    handleChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+        console.log(event.target.value)
+    };
 
-    handleClick = async () => {
-        let response = await axios.get("https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=11203");
-        let { data } = response.data;
+    handleClick = async (e) => {
+        e.preventDefault();
+        let response = await axios.get(`https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=${this.state.zip_code}`);
+        let data = response.data;
         this.setState({ zip: data })
-        console.log(response, "This is the Axios call")
-        console.log(response.data[0].jurisdiction_name, "This is the Axios call also")
-
-
-        this.setState({ buttonState: 'loading' })
-        // make asynchronous call
-        setTimeout(() => {
-            this.setState({ buttonState: 'success' })
-        }, 3000)
+        console.log(response, "This is the Axios call also")
+        console.log(response.data[0].jurisdiction_name, "This is where the data I want lives")
+        console.log(data)
     }
 
-    // componentDidMount() {
-    //     this.getData()
-    //     console.log(this.state.zip, "Over Here")
-    // }
-
     render() {
+
+        // console.log(this.state.zip_code)
+
         return (
 
             <div className="PopulationView">
@@ -56,31 +53,68 @@ class PopulationView extends Component {
                 <Table className="table" responsive="sm" striped bordered hover>
                     <thead className="table-bordered">
                         <tr>
-                            <th>Zip: ?????</th>
-                            {console.log()}
+                            <th>Zip: {this.state.zip && this.state.zip[0].jurisdiction_name}</th>
                             <th>Percentage</th>
-                            {/* <th>Last Name</th> */}
                         </tr>
                     </thead>
                     <tbody className="table-bordered">
-                        {/* <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr> */}
                         <tr>
                             <td>Male</td>
-                            <td>50% {this.response}</td>
+                            <td>{this.state.zip ? `${this.state.zip[0].percent_male * 100}%` : "0%"}</td>
+                            {/* Above: If(?) this.state.zip is true... => `${this.state....(so on..), else(:) => "0%"}` */}
                             {/* <td>Thornton</td> */}
                         </tr>
                         <tr>
                             <td>Female</td>
-                            <td>50%</td>
-                            {/* <td>Clayton</td> */}
+                            <td>{this.state.zip ? `${this.state.zip[0].percent_female * 100}%` : "0%"}</td>
                             {/* <td colSpan="2">Larry the Bird</td> */}
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>
+                                {this.state.zip ? `${this.state.zip[0].percent_gender_total}%` : "0%"}
+                            </td>
                         </tr>
                     </tbody>
                 </Table>
+
+                {/* // Explicit return requires "return" key => "{}", Implicit "()" does not. */}
+                
+                {/* Render using a map() */}
+                {/* {this.state.zip.map((area, index) => {
+                    return (
+                        <div key={index}>
+            
+                            <h6>{area.jurisdiction_name}</h6>
+
+                        </div>
+                    )
+                })} */}
+
+                {/* {this.state.zip.map(() => (
+                   <div></div> 
+                ))} */}
+
+                <div>
+
+                    <Form.Group onSubmit={this.handleClick} as={Col} md="3" controlId="validationCustom05">
+                        <Form.Label>Zip</Form.Label>
+                        <Form.Control type="text" placeholder="Zip" required />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid zip.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+
+                    <form onSubmit={this.handleClick}>
+                        <input
+                            name="zip_code"
+                            onChange={this.handleChange}
+                            value={this.state.zip_code}
+                            padding="10px">
+                        </input>
+                    </form>
+
+                </div>
 
                 <div>
                     <Button onClick={this.handleClick} className="btn-secondary">Submit</Button>{' '}
