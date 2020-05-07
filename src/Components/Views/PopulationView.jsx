@@ -31,9 +31,10 @@ class PopulationView extends Component {
         let response = await axios.get(`https://data.cityofnewyork.us/resource/6bic-qvek.json?jurisdiction_name=${this.state.zip_code}`);
         let data = response.data;
         this.setState({ zip: data })
-        console.log(response, "This is the Axios call also")
-        console.log(response.data[0].jurisdiction_name, "This is where the data I want lives")
+        this.setState({zip_code: ""})
+        console.log(response, "This is the Axios call.")
         console.log(data)
+        console.log(response.data[0].jurisdiction_name, "This is where the data I want lives.")
     }
 
     render() {
@@ -84,6 +85,8 @@ class PopulationView extends Component {
                 {/* {this.state.zip.map((area, index) => {
                     return (
                         <div key={index}>
+
+                            *Div and page content here.*
             
                             <h6>{area.jurisdiction_name}</h6>
 
@@ -97,16 +100,10 @@ class PopulationView extends Component {
 
                 <div>
 
-                    <Form.Group onSubmit={this.handleClick} as={Col} md="3" controlId="validationCustom05">
-                        <Form.Label>Zip</Form.Label>
-                        <Form.Control type="text" placeholder="Zip" required />
-                        <Form.Control.Feedback type="invalid">
-                            Please provide a valid zip.
-                        </Form.Control.Feedback>
-                    </Form.Group>
-
                     <form onSubmit={this.handleClick}>
                         <input
+                            className="input"
+                            placeholder="Zip Code"
                             name="zip_code"
                             onChange={this.handleChange}
                             value={this.state.zip_code}

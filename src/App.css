@@ -124,6 +124,12 @@
   color: rgb(59, 91, 110);
 }
 
+.input {
+  color: rgb(59, 91, 110);
+  text-align: center;
+  font-weight: bolder;
+  margin: 25px;
+}
 
 
 
